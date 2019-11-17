@@ -23,7 +23,7 @@
         </table>
     @endif
     
-    {!! link_to_route('tasks.create', '新規リスト作成', [], ['class' => 'btn btn-primary']) !!}
-    {!! link_to_route('tasks.edit', 'このリストを編集', ['id' => $task->id], ['class' => 'btn btn-light']) !!}
+    {!! link_to_route('tasks.create', '新規タスクの追加成', [], ['class' => 'btn alert-success mr-3']) !!}
+    {!! link_to_route('tasks.edit', 'このタスクを編集', ['id' => $task->id], ['class' => 'btn alert-secondary']) !!}
 
 @endsection

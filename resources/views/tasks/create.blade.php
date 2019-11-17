@@ -13,7 +13,7 @@
                     {!! Form::text('content', null, ['class' => 'form-control']) !!}
                 </div>
         
-                {!! Form::submit('登録', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('登録', ['class' => 'btn alert-primary']) !!}
         
             {!! Form::close() !!}
         </div>
