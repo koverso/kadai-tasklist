@@ -9,6 +9,7 @@
             <thead>
                 <tr>
                     <th>id</th>
+                    <th>ステータス</th>
                     <th>To Do</th>
                 </tr>
             </thead>
@@ -16,6 +17,7 @@
                 @foreach ($tasks as $task)
                 <tr>
                     <td>{!! link_to_route('tasks.show', $task->id, ['id' => $task->id]) !!}</td>
+                    <td>{{ $task->status }}</td>
                     <td>{{ $task->content }}</td>
                 </tr>
                 @endforeach
@@ -23,7 +25,6 @@
         </table>
     @endif
     
-    {!! link_to_route('tasks.create', '新規タスクの追加成', [], ['class' => 'btn alert-success mr-3']) !!}
-    {!! link_to_route('tasks.edit', 'このタスクを編集', ['id' => $task->id], ['class' => 'btn alert-secondary']) !!}
+    {!! link_to_route('tasks.create', '新規タスク', [], ['class' => 'btn alert-success mr-3']) !!}
 
 @endsection
