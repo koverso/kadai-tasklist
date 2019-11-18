@@ -9,7 +9,8 @@
             <thead>
                 <tr>
                     <th>id</th>
-                    <th>ステータス</th>
+                    <th>ステータス</th>　　//　コメント
+                    
                     <th>To Do</th>
                 </tr>
             </thead>
