@@ -8,10 +8,10 @@
         <div class="col-6">
             {!! Form::model($task, ['route' => ['tasks.update', $task->id], 'method' => 'put']) !!}
                 <div class="form-group">
-                    {!! Form::label('status', '新しいステータスを入力 :') !!}
+                    {!! Form::label('status', '新しいステータスを入力') !!}
                     {!! Form::text('status', null, ['class' => 'form-control']) !!}
                 <div class="form-group">
-                    {!! Form::label('content', '新しいタスクを入力 :') !!}
+                    {!! Form::label('content', '新しいタスクを入力') !!}
                     {!! Form::text('content', null, ['class' => 'form-control']) !!}
                 </div>
         
