@@ -2,9 +2,7 @@
 
 @section('content')
 
-    <h1>ToDoリスト</h1>
-
-    @if (count($tasks) > 0)
+    <h1>To Doリスト</h1>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -23,8 +21,7 @@
                 @endforeach
             </tbody>
         </table>
-    @endif
-    
-    {!! link_to_route('tasks.create', '新規タスク', [], ['class' => 'btn alert-success mr-3']) !!}
+        {{ $tasks->links('pagination::bootstrap-4') }}
+        {!! link_to_route('tasks.create', '新規タスク', [], ['class' => 'btn alert-success mb-3']) !!}
 
 @endsection
