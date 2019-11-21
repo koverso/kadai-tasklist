@@ -25,7 +25,6 @@ class TasksController extends Controller
                 'tasks' => $tasks,
             ];
         }
-        
         return view('welcome', $data);
     }
 
@@ -37,12 +36,9 @@ class TasksController extends Controller
     public function create()
     {
         $task = new Task;
-        if (\Auth::id() === $task->user_id) {
-            return view('tasks.create', [
-                'task' => $task,
-            ]);
-        }
-        return redirect('/');
+        return view('tasks.create', [
+            'task' => $task,
+        ]);
     }
 
     /**
@@ -53,19 +49,15 @@ class TasksController extends Controller
      */
     public function store(Request $request)
     {
-        
-        if (\Auth::id() === $task->user_id) {
             $this->validate($request, [
                 'status' => 'required|max:10',
                 'content' => 'required|max:191',
             ]);
-            
             $request->user()->tasks()->create([
                 'status' => $request->status,
                 'content' => $request->content,
             ]);
-        }
-        return redirect('/');
+            return redirect('/');
     }
 
     /**
@@ -136,7 +128,6 @@ class TasksController extends Controller
         if (\Auth::id() === $task->user_id) {
             $task->delete();
         }
-
         return redirect('/');
     }
 }
